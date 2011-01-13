@@ -1,0 +1,15 @@
+options:
+  charset: utf8
+
+MemberFile:
+  actAs: [Timestampable]
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    member_id: { type: integer(4), notnull: false }
+    title: { type: string, notnull: true }
+    body: { type: string, notnull: true }
+    password: { type string, notnull: false }
+    path: { type:string, notnull: false }
+  relations:
+    Member: { foreign: id, onDelete: cascade }
+
