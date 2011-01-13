@@ -17,14 +17,7 @@ abstract class PluginMemberFileForm extends BaseMemberFileForm
     $this->setValidator('title', new opValidatorString(array('max_length' => 140, 'trim' => true)));
     $this->setValidator('body', new opValidatorString(array('max_length' => 2147483647, 'trim' => true)));
     $this->setValidator('title', new opValidatorString(array('max_length' => 16, 'trim' => true)));
-    
-    $this->setWidget(''
-    
-    
-    
-    
-    
-    
+      
     
     $this->useFields(array('title', 'body', 'password'));
   }
