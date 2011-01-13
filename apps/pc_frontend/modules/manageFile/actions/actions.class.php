@@ -75,7 +75,7 @@ class manageFileActions extends sfActions
     $this->forward404Unless($this->manageFile->getMemberId() === $this->getUser()->getMemberId());
     $this->checkCSRFProtection();
     $manageFile->delete()
-    $this->getUser()->setFlash('notice', '�폜���܂����B');
+    $this->getUser()->setFlash('notice', 'ファイルの削除に成功しました。');
     $this->redirect('@downloads_list');
   }
 
