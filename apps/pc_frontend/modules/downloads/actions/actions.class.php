@@ -21,7 +21,7 @@ class downloadsActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $this->memberId = isset($request->getParameter('id')) ? $request->getParameter('id') : $this->getUser()->getMember()->getId();
-    $this->memberFiles = Doctrine::getTable('MiniDiary')->findByMemberId($this->memberId);
+    $this->memberFiles = Doctrine::getTable('MemberFile')->findByMemberId($this->memberId);
     if(!$this->memberFiles){
       return sfView::ERROR;
     }
@@ -34,7 +34,7 @@ class downloadsActions extends sfActions
       return sfView::ERROR;
     }
     $this->FileId = $request->getParameter('id');
-    $this->memberFile = Doctrine::getTable('MiniDiary')->find($this->FileId);
+    $this->memberFile = Doctrine::getTable('MemberFile')->find($this->FileId);
     if(!$this->memberFile){
       return sfView::ERROR;
     }
@@ -47,7 +47,7 @@ class downloadsActions extends sfActions
       return sfView::ERROR;
     }
     $FileId = $request->getParameter('id');
-    $memberFile = Doctrine::getTable('MiniDiary')->find($FileId);
+    $memberFile = Doctrine::getTable('MemberFile')->find($FileId);
     if(!$this->memberFile){
       return sfView::ERROR;
     }
