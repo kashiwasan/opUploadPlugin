@@ -13,8 +13,8 @@
  *
  * @package    OpenPNE
  * @subpackage downloads
- * @author     Your name here
- * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
+ * @author     Shouta Kashiwagi
+ * @version    opUploadPlugin actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
 class downloadsActions extends sfActions
 {
@@ -61,7 +61,7 @@ class downloadsActions extends sfActions
     header('Content-Length: '.filesize($path));
     header('Content-Transfer-Encoding: binary');
 
-    /download the file.
+    //download the file.
     readfile ($npath);
     
     return sfView::NONE;
