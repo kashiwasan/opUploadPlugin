@@ -15,14 +15,27 @@
  * @subpackage opUploadPlugin
  * @author     Kashiwasan <kashiwasan@gmail.com>
  */
-class opUploadPluginConfigurationForm extends BaseForm
+class opUploadPluginConfigurationForm extends sfForm
 {
   public function configure()
   {
 
-    $this->widgetSchema['allow_extentions'] = new sfWidgetFormInput();
-    $this->setDefault('allow_extentions', Doctrine::getTable('SnsConfig')->get('op_upload_plugin_allow_extentions', ''));
-    $this->widgetSchema->setHelp('allow_extentions', 'Write your list to allow files of extentions.');
+    $this->setWidgets(array(
+      'allow_extensions'    => new sfWidgetFormInput(),
+      'max_size'   => new sfWidgetFormInput(),
+      'strage_size' => new sfWidgetFormInput(),
+    ));
+
+    $this->widgetSchema->setLabels(array(
+      'allow_extensions'    => 'allow files in extensions.',
+      'max_size'   => 'max file size here.',
+      'strage_size' => 'your max strage size here.',
+    ));
+    $this->setDefaults(array(
+      'allow_extensions' => ,
+      '' => ,
+      '' => ,
+    ));
 
     $this->widgetSchema->setNameFormat('op_upload_plugin[%s]');
   }
